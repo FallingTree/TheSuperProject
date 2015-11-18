@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="projet_video">
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|Sdram_Control_4Port:u6|Sdram_RD_FIFO:read_fifo2|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_21m1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|YCbCr2RGB:u8|MAC_3:u1|altmult_add:ALTMULT_ADD_component" CBX_FILE_NAME="mult_add_4f74.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|filtre_video:u_10|module_lissage:u_4|module_memoire_ligne:mem_ligne_1|altsyncram:memoire_rtl_0" CBX_FILE_NAME="altsyncram_m8c1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|DIV:u5|lpm_divide:lpm_divide_component" CBX_FILE_NAME="lpm_divide_d6t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|Sdram_Control_4Port:u6|Sdram_RD_FIFO:read_fifo1|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_21m1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|Sdram_Control_4Port:u6|Sdram_WR_FIFO:write_fifo1|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_21m1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|YCbCr2RGB:u8|MAC_3:u0|altmult_add:ALTMULT_ADD_component" CBX_FILE_NAME="mult_add_4f74.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|YCbCr2RGB:u8|MAC_3:u2|altmult_add:ALTMULT_ADD_component" CBX_FILE_NAME="mult_add_4f74.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|de2_tv|Sdram_Control_4Port:u6|Sdram_WR_FIFO:write_fifo2|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_21m1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

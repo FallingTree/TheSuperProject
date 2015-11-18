@@ -1,0 +1,251 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 132 02/25/2009 SJ Full Version
+# Date created = 15:36:34  November 17, 2010
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		projet_video_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY de2_tv
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:36:34  NOVEMBER 17, 2010"
+set_global_assignment -name LAST_QUARTUS_VERSION "11.1 SP2"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_location_assignment PIN_N25 -to DPDT_SW[0]
+set_location_assignment PIN_N26 -to DPDT_SW[1]
+set_location_assignment PIN_P25 -to DPDT_SW[2]
+set_location_assignment PIN_AE14 -to DPDT_SW[3]
+set_location_assignment PIN_AF14 -to DPDT_SW[4]
+set_location_assignment PIN_AD13 -to DPDT_SW[5]
+set_location_assignment PIN_AC13 -to DPDT_SW[6]
+set_location_assignment PIN_C13 -to DPDT_SW[7]
+set_location_assignment PIN_B13 -to DPDT_SW[8]
+set_location_assignment PIN_A13 -to DPDT_SW[9]
+set_location_assignment PIN_N1 -to DPDT_SW[10]
+set_location_assignment PIN_P1 -to DPDT_SW[11]
+set_location_assignment PIN_P2 -to DPDT_SW[12]
+set_location_assignment PIN_T7 -to DPDT_SW[13]
+set_location_assignment PIN_U3 -to DPDT_SW[14]
+set_location_assignment PIN_U4 -to DPDT_SW[15]
+set_location_assignment PIN_V1 -to DPDT_SW[16]
+set_location_assignment PIN_V2 -to DPDT_SW[17]
+set_location_assignment PIN_G26 -to KEY[0]
+set_location_assignment PIN_N23 -to KEY[1]
+set_location_assignment PIN_P23 -to KEY[2]
+set_location_assignment PIN_W26 -to KEY[3]
+set_location_assignment PIN_T6 -to DRAM_ADDR[0]
+set_location_assignment PIN_V4 -to DRAM_ADDR[1]
+set_location_assignment PIN_V3 -to DRAM_ADDR[2]
+set_location_assignment PIN_W2 -to DRAM_ADDR[3]
+set_location_assignment PIN_W1 -to DRAM_ADDR[4]
+set_location_assignment PIN_U6 -to DRAM_ADDR[5]
+set_location_assignment PIN_U7 -to DRAM_ADDR[6]
+set_location_assignment PIN_U5 -to DRAM_ADDR[7]
+set_location_assignment PIN_W4 -to DRAM_ADDR[8]
+set_location_assignment PIN_W3 -to DRAM_ADDR[9]
+set_location_assignment PIN_Y1 -to DRAM_ADDR[10]
+set_location_assignment PIN_V5 -to DRAM_ADDR[11]
+set_location_assignment PIN_AE2 -to DRAM_BA_0
+set_location_assignment PIN_AE3 -to DRAM_BA_1
+set_location_assignment PIN_AB3 -to DRAM_CAS_N
+set_location_assignment PIN_AA6 -to DRAM_CKE
+set_location_assignment PIN_AA7 -to DRAM_CLK
+set_location_assignment PIN_AC3 -to DRAM_CS_N
+set_location_assignment PIN_V6 -to DRAM_DQ[0]
+set_location_assignment PIN_AA2 -to DRAM_DQ[1]
+set_location_assignment PIN_AA1 -to DRAM_DQ[2]
+set_location_assignment PIN_Y3 -to DRAM_DQ[3]
+set_location_assignment PIN_Y4 -to DRAM_DQ[4]
+set_location_assignment PIN_R8 -to DRAM_DQ[5]
+set_location_assignment PIN_T8 -to DRAM_DQ[6]
+set_location_assignment PIN_V7 -to DRAM_DQ[7]
+set_location_assignment PIN_W6 -to DRAM_DQ[8]
+set_location_assignment PIN_AB2 -to DRAM_DQ[9]
+set_location_assignment PIN_AB1 -to DRAM_DQ[10]
+set_location_assignment PIN_AA4 -to DRAM_DQ[11]
+set_location_assignment PIN_AA3 -to DRAM_DQ[12]
+set_location_assignment PIN_AC2 -to DRAM_DQ[13]
+set_location_assignment PIN_AC1 -to DRAM_DQ[14]
+set_location_assignment PIN_AA5 -to DRAM_DQ[15]
+set_location_assignment PIN_AD2 -to DRAM_LDQM
+set_location_assignment PIN_Y5 -to DRAM_UDQM
+set_location_assignment PIN_AB4 -to DRAM_RAS_N
+set_location_assignment PIN_AD3 -to DRAM_WE_N
+set_location_assignment PIN_D13 -to OSC_27
+set_location_assignment PIN_N2 -to OSC_50
+set_location_assignment PIN_P26 -to EXT_CLOCK
+set_location_assignment PIN_AE4 -to SRAM_ADDR[0]
+set_location_assignment PIN_AF4 -to SRAM_ADDR[1]
+set_location_assignment PIN_AC5 -to SRAM_ADDR[2]
+set_location_assignment PIN_AC6 -to SRAM_ADDR[3]
+set_location_assignment PIN_AD4 -to SRAM_ADDR[4]
+set_location_assignment PIN_AD5 -to SRAM_ADDR[5]
+set_location_assignment PIN_AE5 -to SRAM_ADDR[6]
+set_location_assignment PIN_AF5 -to SRAM_ADDR[7]
+set_location_assignment PIN_AD6 -to SRAM_ADDR[8]
+set_location_assignment PIN_AD7 -to SRAM_ADDR[9]
+set_location_assignment PIN_V10 -to SRAM_ADDR[10]
+set_location_assignment PIN_V9 -to SRAM_ADDR[11]
+set_location_assignment PIN_AC7 -to SRAM_ADDR[12]
+set_location_assignment PIN_W8 -to SRAM_ADDR[13]
+set_location_assignment PIN_W10 -to SRAM_ADDR[14]
+set_location_assignment PIN_Y10 -to SRAM_ADDR[15]
+set_location_assignment PIN_AB8 -to SRAM_ADDR[16]
+set_location_assignment PIN_AC8 -to SRAM_ADDR[17]
+set_location_assignment PIN_AD8 -to SRAM_DQ[0]
+set_location_assignment PIN_AE6 -to SRAM_DQ[1]
+set_location_assignment PIN_AF6 -to SRAM_DQ[2]
+set_location_assignment PIN_AA9 -to SRAM_DQ[3]
+set_location_assignment PIN_AA10 -to SRAM_DQ[4]
+set_location_assignment PIN_AB10 -to SRAM_DQ[5]
+set_location_assignment PIN_AA11 -to SRAM_DQ[6]
+set_location_assignment PIN_Y11 -to SRAM_DQ[7]
+set_location_assignment PIN_AE7 -to SRAM_DQ[8]
+set_location_assignment PIN_AF7 -to SRAM_DQ[9]
+set_location_assignment PIN_AE8 -to SRAM_DQ[10]
+set_location_assignment PIN_AF8 -to SRAM_DQ[11]
+set_location_assignment PIN_W11 -to SRAM_DQ[12]
+set_location_assignment PIN_W12 -to SRAM_DQ[13]
+set_location_assignment PIN_AC9 -to SRAM_DQ[14]
+set_location_assignment PIN_AC10 -to SRAM_DQ[15]
+set_location_assignment PIN_AE10 -to SRAM_WE_N
+set_location_assignment PIN_AD10 -to SRAM_OE_N
+set_location_assignment PIN_AF9 -to SRAM_UB_N
+set_location_assignment PIN_AE9 -to SRAM_LB_N
+set_location_assignment PIN_AC11 -to SRAM_CE_N
+set_location_assignment PIN_C4 -to TD_RESET
+set_location_assignment PIN_C8 -to VGA_R[0]
+set_location_assignment PIN_F10 -to VGA_R[1]
+set_location_assignment PIN_G10 -to VGA_R[2]
+set_location_assignment PIN_D9 -to VGA_R[3]
+set_location_assignment PIN_C9 -to VGA_R[4]
+set_location_assignment PIN_A8 -to VGA_R[5]
+set_location_assignment PIN_H11 -to VGA_R[6]
+set_location_assignment PIN_H12 -to VGA_R[7]
+set_location_assignment PIN_F11 -to VGA_R[8]
+set_location_assignment PIN_E10 -to VGA_R[9]
+set_location_assignment PIN_B9 -to VGA_G[0]
+set_location_assignment PIN_A9 -to VGA_G[1]
+set_location_assignment PIN_C10 -to VGA_G[2]
+set_location_assignment PIN_D10 -to VGA_G[3]
+set_location_assignment PIN_B10 -to VGA_G[4]
+set_location_assignment PIN_A10 -to VGA_G[5]
+set_location_assignment PIN_G11 -to VGA_G[6]
+set_location_assignment PIN_D11 -to VGA_G[7]
+set_location_assignment PIN_E12 -to VGA_G[8]
+set_location_assignment PIN_D12 -to VGA_G[9]
+set_location_assignment PIN_J13 -to VGA_B[0]
+set_location_assignment PIN_J14 -to VGA_B[1]
+set_location_assignment PIN_F12 -to VGA_B[2]
+set_location_assignment PIN_G12 -to VGA_B[3]
+set_location_assignment PIN_J10 -to VGA_B[4]
+set_location_assignment PIN_J11 -to VGA_B[5]
+set_location_assignment PIN_C11 -to VGA_B[6]
+set_location_assignment PIN_B11 -to VGA_B[7]
+set_location_assignment PIN_C12 -to VGA_B[8]
+set_location_assignment PIN_B12 -to VGA_B[9]
+set_location_assignment PIN_B8 -to VGA_CLK
+set_location_assignment PIN_D6 -to VGA_BLANK
+set_location_assignment PIN_A7 -to VGA_HS
+set_location_assignment PIN_D8 -to VGA_VS
+set_location_assignment PIN_B7 -to VGA_SYNC
+set_location_assignment PIN_A6 -to I2C_SCLK
+set_location_assignment PIN_B6 -to I2C_SDAT
+set_location_assignment PIN_J9 -to TD_DATA[0]
+set_location_assignment PIN_E8 -to TD_DATA[1]
+set_location_assignment PIN_H8 -to TD_DATA[2]
+set_location_assignment PIN_H10 -to TD_DATA[3]
+set_location_assignment PIN_G9 -to TD_DATA[4]
+set_location_assignment PIN_F9 -to TD_DATA[5]
+set_location_assignment PIN_D7 -to TD_DATA[6]
+set_location_assignment PIN_C7 -to TD_DATA[7]
+set_location_assignment PIN_D5 -to TD_HS
+set_location_assignment PIN_K9 -to TD_VS
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[4]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[5]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[6]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_DATA[7]
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_HS
+set_instance_assignment -name IO_STANDARD LVTTL -to TD_VS
+set_location_assignment PIN_Y15 -to FL_ADDR[20]
+set_location_assignment PIN_Y14 -to FL_ADDR[21]
+set_instance_assignment -name IO_STANDARD LVTTL -to FL_ADDR[20]
+set_instance_assignment -name IO_STANDARD LVTTL -to FL_ADDR[21]
+set_instance_assignment -name CLOCK_SETTINGS OSC_50 -to OSC_50 -entity DE2_TV
+set_instance_assignment -name CLOCK_SETTINGS DLY0 -to DLY0 -entity DE2_TV
+set_location_assignment PIN_C16 -to TD_CLK
+set_instance_assignment -name CLOCK_SETTINGS TD_CLK -to TD_CLK -entity DE2_TV
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -entity projet_video -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity projet_video -section_id "Root Region"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/module_lissage.vhd
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/module_roberts.vhd
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/memoire_ligne.vhd
+set_global_assignment -name VERILOG_FILE ../verilog/de2_tv.v
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/filtre_video.vhd
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/module_diff.vhd
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/module_fenetrage.vhd
+set_global_assignment -name VHDL_FILE ../vhd_mouvement/module_SRAM.vhd
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/command.v
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/control_interface.v
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/sdr_data_path.v
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/Sdram_Control_4Port.v
+set_global_assignment -name SOURCE_FILE ../verilog/Sdram_Control_4Port/Sdram_Params.h
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/Sdram_PLL.v
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/Sdram_RD_FIFO.v
+set_global_assignment -name VERILOG_FILE ../verilog/Sdram_Control_4Port/Sdram_WR_FIFO.v
+set_global_assignment -name VERILOG_FILE ../verilog/div.v
+set_global_assignment -name VERILOG_FILE ../verilog/I2C_AV_Config.v
+set_global_assignment -name VERILOG_FILE ../verilog/I2C_Controller.v
+set_global_assignment -name VERILOG_FILE ../verilog/ITU_656_Decoder.v
+set_global_assignment -name VERILOG_FILE ../verilog/mac_3.v
+set_global_assignment -name VERILOG_FILE ../verilog/Reset_Delay.v
+set_global_assignment -name VERILOG_FILE ../verilog/TD_Detect.v
+set_global_assignment -name VERILOG_FILE ../verilog/VGA_Ctrl.v
+set_global_assignment -name VERILOG_FILE ../verilog/YCbCr2RGB.v
+set_global_assignment -name VERILOG_FILE ../verilog/YUV422_to_444.v
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name SDC_FILE projet_video.sdc
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,133 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'u6|sdram_pll1|altpll_component|pll|clk[2]'
+Slack : -6.457
+TNS   : -214.253
+
+Type  : Slow Model Setup 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : -5.425
+TNS   : -345.592
+
+Type  : Slow Model Setup 'OSC_27'
+Slack : -2.067
+TNS   : -170.014
+
+Type  : Slow Model Setup 'clk'
+Slack : 13.711
+TNS   : 0.000
+
+Type  : Slow Model Hold 'OSC_27'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clk'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'u6|sdram_pll1|altpll_component|pll|clk[2]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : -6.224
+TNS   : -1105.752
+
+Type  : Slow Model Recovery 'OSC_27'
+Slack : -3.823
+TNS   : -1270.977
+
+Type  : Slow Model Removal 'OSC_27'
+Slack : 1.806
+TNS   : 0.000
+
+Type  : Slow Model Removal 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : 5.587
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : 2.502
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'u6|sdram_pll1|altpll_component|pll|clk[2]'
+Slack : 7.132
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'OSC_27'
+Slack : 16.138
+TNS   : 0.000
+
+Type  : Fast Model Setup 'u6|sdram_pll1|altpll_component|pll|clk[2]'
+Slack : -3.676
+TNS   : -121.946
+
+Type  : Fast Model Setup 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : -3.045
+TNS   : -196.892
+
+Type  : Fast Model Setup 'OSC_27'
+Slack : -0.979
+TNS   : -84.887
+
+Type  : Fast Model Setup 'clk'
+Slack : 16.968
+TNS   : 0.000
+
+Type  : Fast Model Hold 'OSC_27'
+Slack : -0.402
+TNS   : -2.046
+
+Type  : Fast Model Hold 'clk'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'u6|sdram_pll1|altpll_component|pll|clk[2]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : -3.872
+TNS   : -682.849
+
+Type  : Fast Model Recovery 'OSC_27'
+Slack : -2.256
+TNS   : -660.545
+
+Type  : Fast Model Removal 'OSC_27'
+Slack : 0.967
+TNS   : 0.000
+
+Type  : Fast Model Removal 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : 3.470
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'u6|sdram_pll1|altpll_component|pll|clk[0]'
+Slack : 2.502
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'u6|sdram_pll1|altpll_component|pll|clk[2]'
+Slack : 7.132
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'OSC_27'
+Slack : 16.138
+TNS   : 0.000
+
+------------------------------------------------------------
