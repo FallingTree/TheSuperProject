@@ -2,8 +2,8 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-library lib_VIDEO;
-use lib_VIDEO.all;
+--library lib_VIDEO;
+--use lib_VIDEO.all;
 
 entity bench is
 
@@ -34,35 +34,24 @@ architecture A of bench is
 				oCr	: 	out std_logic_vector(7 downto 0);
 
 				--switch D2E
-				switch			: in std_logic_vector(17 downto 0);		-- à connecter à DPDT_SW;
-
-				-- SRAM interfaces
-				address_SRAM 	: out std_logic_vector(17 downto 0); 	-- à connecter à SRAM_ADDR
-				data_SRAM		: inout std_logic_vector(15 downto 0);  -- à connecter à SRAM_DQ
-				write_enable 	: out std_logic; 						-- à connecter à SRAM_WE_N
-				read_enable 	: out std_logic; 						-- à connecter à SRAM_OE_N
-				chip_enable 	: out std_logic;						-- à connecter à SRAM_CE_N 
-				high_mask 		: out std_logic ; 						-- à connecter à SRAM_UB_N
-				low_mask 		: out std_logic 
-
+				switch			: in std_logic_vector(17 downto 0)		-- à connecter à DPDT_SW;
 				);
 		end component filtre_video;
-		
-		
-		component SRAM
-		  	port (
-			clk				: in std_logic;
-		    -- SRAM interfaces
-			address_SRAM 	: in std_logic_vector(17 downto 0); 	-- à connecter à SRAM_ADDR
-			data_SRAM		: inout std_logic_vector(15 downto 0);  -- à connecter à SRAM_DQ
-			write_enable 	: in std_logic; 						-- à connecter à SRAM_WE_N
-			read_enable 	: in std_logic; 						-- à connecter à SRAM_OE_N
-			chip_enable 	: in std_logic;							-- à connecter à SRAM_CE_N 
-			high_mask 		: in std_logic ; 						-- à connecter à SRAM_UB_N
-			low_mask 		: in std_logic
-		  	) ;
-		end component SRAM ;
-		
+	
+	  component memoire_ligne
+    generic (
+		address_size : integer;
+		word_size : integer
+		);
+	  port (
+		CLK			: in std_logic;
+		RESET		: in std_logic;		
+		address 	: in std_logic_vector(address_size-1 downto 0);
+		data_in		: in std_logic_vector(word_size-1 downto 0);
+		data_out	: out std_logic_vector(word_size-1 downto 0);
+		read_write	: in std_logic
+		);	
+    end component;
 		
 		--horloge et reset
 		signal CLK		: std_logic := '0'; --clock à 54 Mhz
@@ -82,21 +71,17 @@ architecture A of bench is
 		signal oCb	:  std_logic_vector(7 downto 0);
 		signal oCr	:  std_logic_vector(7 downto 0);
 
-
 		signal switch : std_logic_vector(17 downto 0);
+		
+	  -- signaux memoire_ligne
+    signal adresse_memoire_ligne 	: std_logic_vector(7 downto 0);
+    signal read_write_memoire_ligne	: std_logic;
+    signal out_memoire_ligne		: std_logic_vector(7 downto 0) ;
 
-		-- SRAM interfaces
-		signal address_SRAM 	:  std_logic_vector(17 downto 0); 	-- à connecter à SRAM_ADDR
-		signal data_SRAM		:  std_logic_vector(15 downto 0);  -- à connecter à SRAM_DQ
-		signal write_enable 	:  std_logic; 						-- à connecter à SRAM_WE_N
-		signal read_enable 		:  std_logic; 						-- à connecter à SRAM_OE_N
-		signal chip_enable 		:  std_logic;						-- à connecter à SRAM_CE_N 
-		signal high_mask 		:  std_logic; 						-- à connecter à SRAM_UB_N
-		signal low_mask 		:  std_logic;
-			
+    -- signal gradient
+    signal out_gradient		: std_logic_vector(15 downto 0) ;
 		
-		
-				
+	
 begin
 
 	filtre : filtre_video
@@ -114,34 +99,30 @@ begin
 		oY => oY,
 		oCb	=> oCb,
 		oCr	=> oCr,
-		switch => switch,
-		address_SRAM => address_SRAM,
-		data_SRAM => data_SRAM,
-		write_enable => write_enable,
-		read_enable => read_enable,
-		chip_enable => chip_enable,
-		high_mask => high_mask,
-		low_mask => low_mask
+		switch => switch
+
 		);
 		
-	memoire: SRAM
-		port map(
-		clk	=> CLK,
-	    -- SRAM interfaces
-		address_SRAM => address_SRAM,
-		data_SRAM => data_SRAM,
-		write_enable => write_enable,
-		read_enable => read_enable,
-		chip_enable => chip_enable,
-		high_mask => high_mask,
-		low_mask => low_mask
-		) ;
+	ligne : memoire_ligne
+	    generic map (
+	    address_size   => 8, 
+	    word_size => 8
+	    )
+	    port map(
+			CLK => CLK,
+			RESET => RESET,
+			address 	=> adresse_memoire_ligne,
+		  data_in		=> pixel_in,
+		  data_out	=> out_memoire_ligne,
+		  read_write	=> read_write_memoire_ligne
+			);
+	
 
 	
 	switch <= "000" & "00000000000" & "1111";
 	
 	CLK <= not(CLK) after 10 ns; -- simulation de l'horloge à 54 MHz
-	RESET <= '0', '1' after 165 ns;
+	RESET <= '0', '1' after 15 ns; --ADDED : le reset etait trop long. Par contre il ne doit pas tomber sur le front du signal
 		
 	iCb <= "10000000";
 	iCr <= "10000000";
@@ -165,7 +146,7 @@ begin
 --		iY <= std_logic_vector(unsigned(iY) + 1); 
 
 -- test 2 :
-		temp := std_logic_vector(unsigned(VGA_X) + unsigned(VGA_Y(6 downto 0) & '0'));
+	  temp := std_logic_vector(unsigned(VGA_X) + unsigned(VGA_Y(6 downto 0) & '0'));
 		iY <= temp(7 downto 0);
 		
 -- test 3 :				

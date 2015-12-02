@@ -7,6 +7,26 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
+vsim work.bench
+# vsim work.bench 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+vsim work.memoire_ligne
+# vsim work.memoire_ligne 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.memoire_ligne(a)#1
+# ** Fatal: (vsim-3350) Generic "address_size" has not been given a value.
+#    Time: 0 ns  Iteration: 0  Instance: /memoire_ligne File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/memoire_ligne.vhd Line: 11
+# FATAL ERROR while loading design
+# Error loading design
 # Loading project TheSuperProject
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
@@ -16,3 +36,478 @@
 # Compile of module_fenetrage.vhd was successful.
 # Compile of module_SRAM.vhd was successful.
 # 7 compiles, 0 failed with no errors. 
+vsim work.bench work.filtre_video work.memoire_ligne work.module_diff work.module_sram
+# vsim work.bench work.filtre_video work.memoire_ligne work.module_diff work.module_sram 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+# Loading work.filtre_video(a)#1
+# Loading work.memoire_ligne(a)#1
+# Loading work.module_diff(arch)#1
+# Loading work.module_sram(a)#1
+# ** Fatal: (vsim-3350) Generic "address_size" has not been given a value.
+#    Time: 0 ns  Iteration: 0  Instance: /memoire_ligne File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/memoire_ligne.vhd Line: 11
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.bench work.filtre_video work.memoire_ligne work.module_diff work.module_fenetrage work.module_sram work.sram
+# vsim work.bench work.filtre_video work.memoire_ligne work.module_diff work.module_fenetrage work.module_sram work.sram 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+# Loading work.filtre_video(a)#1
+# Loading work.memoire_ligne(a)#1
+# Loading work.module_diff(arch)#1
+# Loading work.module_fenetrage(a)#1
+# Loading work.module_sram(a)#1
+# Loading work.sram(arch)#1
+# ** Fatal: (vsim-3350) Generic "address_size" has not been given a value.
+#    Time: 0 ns  Iteration: 0  Instance: /memoire_ligne File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/memoire_ligne.vhd Line: 11
+# FATAL ERROR while loading design
+# Error loading design
+vsim work.bench
+# vsim work.bench 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+add wave -position insertpoint  \
+sim:/bench/CLK \
+sim:/bench/RESET \
+sim:/bench/VGA_X \
+sim:/bench/VGA_Y \
+sim:/bench/iY \
+sim:/bench/oY \
+sim:/bench/address_SRAM \
+sim:/bench/data_SRAM \
+sim:/bench/write_enable
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/memoire
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 0  Instance: /bench/memoire
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /bench/memoire
+run
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 890 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 890 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 920 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 920 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 960 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 960 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1 us  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1 us  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1080 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1080 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1120 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1120 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1160 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1160 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1200 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1200 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1240 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1240 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1280 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1280 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1320 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1320 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1360 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1360 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1400 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1400 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1440 ns  Iteration: 2  Instance: /bench/filtre/u_3
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 1440 ns  Iteration: 2  Instance: /bench/filtre/u_3
+add wave -position insertpoint iYd
+# (vish-4014) No objects found matching 'iYd'.
+add wave -position insertpoint end
+# (vish-4014) No objects found matching 'end'.
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# 7 compiles, 0 failed with no errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful with warnings.
+# 8 compiles, 0 failed with no errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful with warnings.
+# 8 compiles, 0 failed with no errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd failed with 1 errors.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful with warnings.
+# 8 compiles, 0 failed with no errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd failed with 1 errors.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
+quit -sim
+vsim work.bench
+# vsim work.bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+add wave -position insertpoint  \
+sim:/bench/CLK \
+sim:/bench/VGA_X \
+sim:/bench/VGA_Y \
+sim:/bench/iY \
+sim:/bench/oY \
+sim:/bench/adresse_memoire_ligne \
+sim:/bench/out_memoire_ligne \
+sim:/bench/pixel_in
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/ligne
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
+# Causality operation skipped due to absence of debug database file

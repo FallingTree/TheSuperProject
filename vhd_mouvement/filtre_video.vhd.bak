@@ -89,6 +89,9 @@ signal out_memoire_ligne		: std_logic_vector(7 downto 0) ;
 -- signal gradient
 signal out_gradient		: std_logic_vector(15 downto 0) ;
 
+--signaux debug
+signal threshold		: std_logic_vector(7 downto 0) ;
+
 begin
 	u_1: module_fenetrage 
 	generic map(
