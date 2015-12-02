@@ -14,7 +14,7 @@ end entity ; -- module_gradient
 
 architecture arch of module_gradient is
 
-signal Rs,Rg, R1,R2,R3 : std_logic_vector(15 downto 0);
+signal Rs,Rg, R1,R2,R3 : std_logic_vector(integer range 0 to 15);
 
 begin
 

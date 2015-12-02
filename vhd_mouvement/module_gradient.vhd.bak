@@ -21,9 +21,8 @@ begin
 	process_grad : process( in_active_area, iYu, iYd)
 	begin
 		if in_active_area = '1' then -- A corriger au besoin
-		  R1 <= std_logic_vector("00000000" - unsigned(iYu) - unsigned(iYd)) & std_logic_vector(unsigned(iYu) - unsigned(iYd));
-			--Rg <= std_logic_vector(unsigned(Rs) + ((-unsigned(iYu) - unsigned(iYd)) & (unsigned(iYu) - unsigned(iYd))));
-			--Rs <= std_logic_vector((unsigned(iYu) + unsigned(iYd)) & (unsigned(iYu) - unsigned(iYd)));
+		  Rs <= std_logic_vector("00000000" - unsigned(iYu) - unsigned(iYd)) & std_logic_vector(unsigned(iYu) - unsigned(iYd));
+			Rg <= std_logic_vector(unsigned(Rs) + unsigned(std_logic_vector("00000000" - unsigned(iYu) - unsigned(iYd)) & std_logic_vector(unsigned(iYu) - unsigned(iYd))));
 		end if;	
 	end process ; -- process_gradient
 	

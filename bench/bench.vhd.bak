@@ -11,7 +11,7 @@ end entity bench;
 
 architecture A of bench is
 	
-	constant size : integer := 4;			
+	constant size : integer := 3;			
 	
 	component filtre_video 
 		generic (
@@ -38,20 +38,6 @@ architecture A of bench is
 				);
 		end component filtre_video;
 	
-	  component memoire_ligne
-    generic (
-		address_size : integer;
-		word_size : integer
-		);
-	  port (
-		CLK			: in std_logic;
-		RESET		: in std_logic;		
-		address 	: in std_logic_vector(address_size-1 downto 0);
-		data_in		: in std_logic_vector(word_size-1 downto 0);
-		data_out	: out std_logic_vector(word_size-1 downto 0);
-		read_write	: in std_logic
-		);	
-    end component;
 		
 		--horloge et reset
 		signal CLK		: std_logic := '0'; --clock à 54 Mhz
@@ -73,13 +59,6 @@ architecture A of bench is
 
 		signal switch : std_logic_vector(17 downto 0);
 		
-	  -- signaux memoire_ligne
-    signal adresse_memoire_ligne 	: std_logic_vector(7 downto 0);
-    signal read_write_memoire_ligne	: std_logic;
-    signal out_memoire_ligne		: std_logic_vector(7 downto 0) ;
-
-    -- signal gradient
-    signal out_gradient		: std_logic_vector(15 downto 0) ;
 		
 	
 begin
@@ -103,20 +82,6 @@ begin
 
 		);
 		
-	ligne : memoire_ligne
-	    generic map (
-	    address_size   => 8, 
-	    word_size => 8
-	    )
-	    port map(
-			CLK => CLK,
-			RESET => RESET,
-			address 	=> adresse_memoire_ligne,
-		  data_in		=> pixel_in,
-		  data_out	=> out_memoire_ligne,
-		  read_write	=> read_write_memoire_ligne
-			);
-	
 
 	
 	switch <= "000" & "00000000000" & "1111";
