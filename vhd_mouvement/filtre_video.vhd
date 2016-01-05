@@ -66,6 +66,7 @@ component module_gradient
 	in_active_area	: in std_logic;
 	clk : in std_logic;
   reset	: in std_logic;
+  synchro : in std_logic;
 	iYd				: in std_logic_vector(7 downto 0) ; -- Current pixel
 	iYu				: in std_logic_vector(7 downto 0) ; -- Pixel in the line memory (the pixel up to the current)
 	oY				: out std_logic_vector(15 downto 0)
@@ -133,6 +134,7 @@ begin
 	   in_active_area	=> in_active_area,
 	   clk => CLK,
 	   reset => RESET,
+	   synchro => synchro_curr,
 	   iYd				=> pixel_in,
 	   iYu				=> out_memoire_ligne, -- Pixel in the line memory (the pixel up to the current)
 	   oY				=> out_gradient
@@ -153,7 +155,7 @@ process_seq:process(clk)	-- clk à 27 MHz <=> 1 périodes en 1 pixel
 	end if;			
 	end process process_seq;
 --
- process_com : process( in_active_area, X_cpt, Y_cpt,adresse_memoire_ligne_current, synchro_curr)
+ process_com : process( in_active_area, X_cpt, Y_cpt,adresse_memoire_ligne_current, synchro_curr, out_gradient)
 	begin
 	if in_active_area = '1'	then		-- zone active
 		
@@ -162,7 +164,9 @@ process_seq:process(clk)	-- clk à 27 MHz <=> 1 périodes en 1 pixel
 		if synchro_curr = '1' then				-- cycle écriture
 			read_write_memoire_ligne <= '1'; -- On active l'écriture	
 			adresse_memoire_ligne_next <= adresse_memoire_ligne_current;				-- address conservée pour le cycle d'écriture
-		else  								-- On ne fait rien mais on incrémente la mémoire
+		  
+		  
+		else  								-- On ne fait rien mais on incrémente la mémoire 
 			read_write_memoire_ligne <= '0';					-- On désactive l'écriture
 			if(to_integer(unsigned(X_cpt)) = 2**size+4) then
 				adresse_memoire_ligne_next <= (others => '0');
