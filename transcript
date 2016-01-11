@@ -8,9 +8,18 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # Loading project TheSuperProject
-# Compile of module_gradient.vhd was successful with warnings.
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
 vsim work.bench
 # vsim work.bench 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -20,58 +29,22 @@ vsim work.bench
 # This port will contribute value (UUUUUUUU) to the signal network.
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
-run wave.do
-# Invalid time value: wave.do
-do wave
-# Cannot open macro file: wave
 do wave.do
-# ** Error: (vish-4014) No objects found matching '/bench/filtre/X_curr'.
-# Executing ONERROR command at macro ./wave.do line 18
-# ** Error: (vish-4014) No objects found matching '/bench/filtre/X_next'.
-# Executing ONERROR command at macro ./wave.do line 19
+# ** Error: (vish-4014) No objects found matching '/bench/filtre/R1_curr'.
+# Executing ONERROR command at macro ./wave.do line 41
+# ** Error: (vish-4014) No objects found matching '/bench/filtre/R1_next'.
+# Executing ONERROR command at macro ./wave.do line 42
+# ** Error: (vish-4014) No objects found matching '/bench/filtre/R2_curr'.
+# Executing ONERROR command at macro ./wave.do line 43
+# ** Error: (vish-4014) No objects found matching '/bench/filtre/R2_next'.
+# Executing ONERROR command at macro ./wave.do line 44
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# ** Fatal: (vsim-3607) Slice range direction (downto) does not match slice prefix direction (to).
-#    Time: 0 ns  Iteration: 1  Process: /bench/filtre/u_3/process_grad File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd
-# Fatal error in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 57
-# 
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/filtre_video.vhd 145 Process process_seq
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd 57 Process process_grad
-# 
-add wave -position insertpoint  \
-sim:/bench/filtre/u_3/Rs_curr \
-sim:/bench/filtre/u_3/Rs_next \
-sim:/bench/filtre/u_3/Rg_curr \
-sim:/bench/filtre/u_3/Rg_next \
-sim:/bench/filtre/u_3/Gh_next \
-sim:/bench/filtre/u_3/Gv_next
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /tp/xph3sic/xph3sic508/TheSuperProject/wave.do
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd 57 Process process_grad
-# 
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# ** Fatal: (vsim-3607) Slice range direction (downto) does not match slice prefix direction (to).
-#    Time: 0 ns  Iteration: 1  Process: /bench/filtre/u_3/process_grad File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd
-# Fatal error in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 57
-# 
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd 57 Process process_grad
-# 
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
 # Compile of filtre_video.vhd was successful.
@@ -79,16 +52,7 @@ run
 # Compile of module_diff.vhd was successful.
 # Compile of module_fenetrage.vhd was successful.
 # Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd failed with 2 errors.
-# 8 compiles, 1 failed with 2 errors. 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful with warnings.
+# Compile of module_gradient.vhd was successful.
 # 8 compiles, 0 failed with no errors. 
 restart
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -101,16 +65,6 @@ restart
 # This port will contribute value (UUUUUUUU) to the signal network.
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 9 (0 to 8). Right is 8 (7 downto 0).
-#    Time: 0 ns  Iteration: 1  Process: /bench/filtre/u_3/process_grad File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd
-# Fatal error in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 57
-# 
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd 57 Process process_grad
-# 
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
 # Compile of filtre_video.vhd was successful.
@@ -118,214 +72,227 @@ run
 # Compile of module_diff.vhd was successful.
 # Compile of module_fenetrage.vhd was successful.
 # Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd failed with 1 errors.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+add wave -position insertpoint  \
+sim:/bench/filtre/R4_curr \
+sim:/bench/filtre/R4_next \
+sim:/bench/filtre/R5_curr \
+sim:/bench/filtre/R5_next \
+sim:/bench/filtre/R6_curr \
+sim:/bench/filtre/R6_next
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
 # 8 compiles, 1 failed with 1 error. 
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful with warnings.
-# 8 compiles, 0 failed with no errors. 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd failed with 2 errors.
-# 8 compiles, 1 failed with 2 errors. 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd failed with 2 errors.
-# 8 compiles, 1 failed with 2 errors. 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful with warnings.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 9 (8 downto 0). Right is 8 (7 downto 0).
-#    Time: 0 ns  Iteration: 1  Process: /bench/filtre/u_3/process_grad File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd
-# Fatal error in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 57
-# 
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd 57 Process process_grad
-# 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful with warnings.
-# 8 compiles, 0 failed with no errors. 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful with warnings.
-# 8 compiles, 0 failed with no errors. 
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
 # Compile of memoire_ligne.vhd was successful.
 # Compile of module_diff.vhd was successful.
 # Compile of module_fenetrage.vhd was successful.
 # Compile of module_SRAM.vhd was successful.
 # Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-run
-run
-run
-add wave -position insertpoint  \
-sim:/bench/filtre/u_3/iYd \
-sim:/bench/filtre/u_3/iYu \
-sim:/bench/filtre/u_3/oY
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /tp/xph3sic/xph3sic508/TheSuperProject/wave.do
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Causality operation skipped due to absence of debug database file
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /tp/xph3sic/xph3sic508/TheSuperProject/wave.do
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Break in Process process_seq at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 29
-run
-run
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd failed with 1 errors.
 # 8 compiles, 1 failed with 1 error. 
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
 # Compile of memoire_ligne.vhd was successful.
 # Compile of module_diff.vhd was successful.
 # Compile of module_fenetrage.vhd was successful.
 # Compile of module_SRAM.vhd was successful.
 # Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Break in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 56
-# A bookmark named "bookmark0" has been added for window "Source"
-# Bookmarks will be automatically saved and restored
-# A bookmark named "bookmark0" has been added for window "Source"
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Break in Process process_seq at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 29
-run
+# 8 compiles, 1 failed with 1 error. 
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 2 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 2 errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 2 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 2 errors. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful with warnings.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 0 failed with no errors. 
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench(a)#1
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful with warnings.
 # Compile of memoire_ligne.vhd was successful.
 # Compile of module_diff.vhd was successful.
 # Compile of module_fenetrage.vhd was successful.
@@ -344,11 +311,36 @@ restart
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
+# Compile of filtre_video.vhd failed with 1 errors.
+# Compile of memoire_ligne.vhd was successful.
+# Compile of module_diff.vhd was successful.
+# Compile of module_fenetrage.vhd was successful.
+# Compile of module_SRAM.vhd was successful.
+# Compile of module_gradient.vhd was successful.
+# 8 compiles, 1 failed with 1 error. 
+# Compile of bench.vhd was successful.
+# Compile of sram.vhd was successful.
+# Compile of filtre_video.vhd was successful with warnings.
 # Compile of memoire_ligne.vhd was successful.
 # Compile of module_diff.vhd was successful.
 # Compile of module_fenetrage.vhd was successful.
@@ -366,168 +358,154 @@ restart
 # This port will contribute value (UUUUUUUU) to the signal network.
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Break in Process process_seq at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 38
-run
 add wave -position insertpoint  \
-sim:/bench/filtre/u_2/memoire
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Break in Process process_seq at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 38
-run
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of module_gradient.vhd was successful.
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run 2 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of module_gradient.vhd failed with 1 errors.
-# Compile of module_gradient.vhd was successful with warnings.
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run 2 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# ** Fatal: (vsim-3420) Array lengths do not match. Left is 16 (15 downto 0). Right is 8 (7 downto 0).
-#    Time: 0 ns  Iteration: 1  Process: /bench/filtre/u_3/process_grad File: /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd
-# Fatal error in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 57
-# 
-# HDL call sequence:
-# Stopped at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd 57 Process process_grad
-# 
-# Compile of module_gradient.vhd was successful.
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run 2 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of module_gradient.vhd was successful.
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run 2 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# A bookmark named "bookmark0" has been added for window "Source"
-# Compile of module_gradient.vhd was successful.
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run 2 us
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
+sim:/bench/filtre/R1_curr \
+sim:/bench/filtre/R1_next \
+sim:/bench/filtre/R2_curr \
+sim:/bench/filtre/R2_next \
+sim:/bench/filtre/R3_curr \
+sim:/bench/filtre/R3_next
 add wave -position insertpoint  \
-sim:/bench/filtre/synchro_curr \
-sim:/bench/filtre/synchro_next
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-add wave -position insertpoint  \
-sim:/bench/filtre/out_vrai_gradient_curr \
-sim:/bench/filtre/out_vrai_gradient_next
+sim:/bench/filtre/module_curr \
+sim:/bench/filtre/module_dir_plus \
+sim:/bench/filtre/module_dir_moins \
+sim:/bench/filtre/Gh \
+sim:/bench/filtre/Gv \
+sim:/bench/filtre/out_filtre
 write format wave -window .main_pane.wave.interior.cs.body.pw.wf /tp/xph3sic/xph3sic508/TheSuperProject/wave.do
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
 # Compile of filtre_video.vhd was successful.
@@ -544,85 +522,144 @@ restart
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.bench(a)#1
+# Loading work.filtre_video(a)#1
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# Warning in wave window restart: (vish-4014) No objects found matching '/bench/filtre/out_vrai_gradient_curr'. 
-# Warning in wave window restart: (vish-4014) No objects found matching '/bench/filtre/out_vrai_gradient_next'. 
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /tp/xph3sic/xph3sic508/TheSuperProject/wave.do
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
 # Compile of bench.vhd was successful.
 # Compile of sram.vhd was successful.
 # Compile of filtre_video.vhd failed with 1 errors.
@@ -648,79 +685,141 @@ restart
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.bench(a)#1
+# Loading work.filtre_video(a)#1
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
 # ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
 # This port will contribute value (UUUUUUUU) to the signal network.
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Break in Process process_grad at /tp/xph3sic/xph3sic508/TheSuperProject/vhd_mouvement/module_gradient.vhd line 50
-run
-add wave -position insertpoint  \
-sim:/bench/filtre/out_vrai_gradient_curr \
-sim:/bench/filtre/out_vrai_gradient_next
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_4
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-restart
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-restart
-# Compile of bench.vhd was successful.
-# Compile of sram.vhd was successful.
-# Compile of filtre_video.vhd was successful.
-# Compile of memoire_ligne.vhd was successful.
-# Compile of module_diff.vhd was successful.
-# Compile of module_fenetrage.vhd was successful.
-# Compile of module_SRAM.vhd was successful.
-# Compile of module_gradient.vhd was successful.
-# 8 compiles, 0 failed with no errors. 
-restart
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.bench(a)#1
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCb(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-# ** Warning: (vsim-8683) Uninitialized out port /bench/filtre/oCr(7 downto 0) has no driver.
-# This port will contribute value (UUUUUUUU) to the signal network.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /bench/filtre/u_2
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /tp/xph3sic/xph3sic508/TheSuperProject/wave.do
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 10 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 50 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 70 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 520 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 530 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 550 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 570 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 610 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 830 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1040 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1050 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1070 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1090 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1560 ns  Iteration: 2  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1570 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 1590 ns  Iteration: 1  Instance: /bench/filtre

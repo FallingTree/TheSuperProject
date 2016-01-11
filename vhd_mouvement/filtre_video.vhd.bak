@@ -66,6 +66,7 @@ component module_gradient
 	in_active_area	: in std_logic;
 	clk : in std_logic;
   reset	: in std_logic;
+  synchro : in std_logic;
 	iYd				: in std_logic_vector(7 downto 0) ; -- Current pixel
 	iYu				: in std_logic_vector(7 downto 0) ; -- Pixel in the line memory (the pixel up to the current)
 	oY				: out std_logic_vector(15 downto 0)
@@ -94,14 +95,38 @@ signal X_next		: std_logic_vector(10 downto 0) ;
 -- signal gradient
 signal out_gradient		: std_logic_vector(15 downto 0) ;
 
---signal out qui prends 1 sur 2 de out gradient
-signal out_vrai_gradient_curr 		: std_logic_vector(15 downto 0) ;
-signal out_vrai_gradient_next 		: std_logic_vector(15 downto 0) ;
-
 --signaux de synchro
 signal synchro_curr, synchro_next : std_logic; 							-- synchro pixel
 
+--signaux adresses pour les deux memoires lignes
+signal adresse_memoire_ligne1_current 	: std_logic_vector(size-1 downto 0);
+signal adresse_memoire_ligne1_next 	: std_logic_vector(size-1 downto 0);
+signal read_write_memoire_ligne1	: std_logic;
+signal out_memoire_ligne1		: std_logic_vector(15 downto 0) ;
 
+
+
+signal adresse_memoire_ligne2_current 	: std_logic_vector(size-1 downto 0);
+signal adresse_memoire_ligne2_next 	: std_logic_vector(size-1 downto 0);
+signal read_write_memoire_ligne2	: std_logic;
+signal out_memoire_ligne2		: std_logic_vector(15 downto 0) ;
+
+
+--signal pour gérer le changement de ligne
+signal change_ligne_curr : std_logic;
+signal change_ligne_next : std_logic;
+
+--Registres pour les pixels à gauche
+signal R1_curr, R1_next, R2_curr, R2_next : std_logic_vector(15 downto 0);
+signal R3_curr, R3_next, R4_curr, R4_next : std_logic_vector(15 downto 0);
+signal R5_curr, R5_next, R6_curr, R6_next : std_logic_vector(15 downto 0);
+
+--Angle et module
+signal angle : std_logic_vector(2 downto 0);
+signal module_curr, module_dir_plus, module_dir_moins : std_logic_vector(15 downto 0);
+signal Gh, Gv : std_logic_vector(7 downto 0);
+
+signal out_filtre : std_logic_vector(7 downto 0);
 
 begin
 	u_1: module_fenetrage 
@@ -137,23 +162,67 @@ begin
 	   in_active_area	=> in_active_area,
 	   clk => CLK,
 	   reset => RESET,
+	   synchro => synchro_curr,
 	   iYd				=> pixel_in,
 	   iYu				=> out_memoire_ligne, -- Pixel in the line memory (the pixel up to the current)
 	   oY				=> out_gradient
 	);
 	
-		
+	u_4: memoire_ligne
+	generic map (
+	address_size   => size, 
+	word_size => 16
+	)
+	port map(
+			CLK => CLK,
+			RESET => RESET,
+			address 	=> adresse_memoire_ligne_current,
+		  data_in		=> out_gradient,
+		  data_out	=> out_memoire_ligne1,
+		  read_write	=> read_write_memoire_ligne1
+ );
+			
+	u_5: memoire_ligne
+	generic map (
+	address_size   => size, 
+	word_size => 16
+	)
+	port map(
+			CLK => CLK,
+			RESET => RESET,
+			address 	=> adresse_memoire_ligne_current,
+		  data_in		=> out_gradient,
+		  data_out	=> out_memoire_ligne2,
+		  read_write	=> read_write_memoire_ligne2
+	);			
+			
+			
 	--process	
 process_seq:process(clk)	-- clk à 27 MHz <=> 1 périodes en 1 pixel 
 	begin	
 	if (clk = '1' and clk'event) then 	
 		if reset ='0' then -- reset actif		
 			adresse_memoire_ligne_current <= (others => '0');
+			adresse_memoire_ligne1_current <= (others => '0');
+			adresse_memoire_ligne2_current <= (others => '0');
+			change_ligne_curr <= '1';
 			synchro_curr <= '1';
+			R1_curr <= (others => '0');
+			R2_curr <= (others => '0');
+			R3_curr <= (others => '0');
+			R4_curr <= (others => '0');
+			R5_curr <= (others => '0');
+			R6_curr <= (others => '0');
 		else
 			adresse_memoire_ligne_current <= adresse_memoire_ligne_next;
 			synchro_curr <= synchro_next;
-			out_vrai_gradient_curr <= out_vrai_gradient_next;
+			change_ligne_curr <= change_ligne_next;
+			R1_curr <= R1_next;
+			R2_curr <= R2_next;
+			R3_curr <= R3_next;
+			R4_curr <= R4_next;
+			R5_curr <= R5_next;
+			R6_curr <= R6_next;
 		end if;	
 	end if;			
 	end process process_seq;
@@ -169,8 +238,7 @@ process_seq:process(clk)	-- clk à 27 MHz <=> 1 périodes en 1 pixel
 			adresse_memoire_ligne_next <= adresse_memoire_ligne_current;				-- address conservée pour le cycle d'écriture
 		  
 		  
-		else  								-- On ne fait rien mais on incrémente la mémoire
-		  out_vrai_gradient_next <= out_gradient;
+		else  								-- On ne fait rien mais on incrémente la mémoire 
 			read_write_memoire_ligne <= '0';					-- On désactive l'écriture
 			if(to_integer(unsigned(X_cpt)) = 2**size+4) then
 				adresse_memoire_ligne_next <= (others => '0');
@@ -188,7 +256,138 @@ process_seq:process(clk)	-- clk à 27 MHz <=> 1 périodes en 1 pixel
 	end if;
 	end process ; -- process_com /* 
 
+	process_mem_grad : process( in_active_area, synchro_curr, change_ligne_curr, out_gradient)
+	begin 
+	 if in_active_area = '1' then	
+
+	   if synchro_curr = '0' then
+	     
+	     if change_ligne_curr = '0' then
+	       read_write_memoire_ligne1 <= '1'; 
+	     else 
+	       read_write_memoire_ligne2 <= '1'; 
+	     end if;
+	     	           
+	   else 
+	     read_write_memoire_ligne1 <= '0'; 
+	     read_write_memoire_ligne2 <= '0'; 
+	   
+	   end if;
+	   
+	   
+	 end if;
+	end process;
 	
+	process_change_ligne : process(in_active_area, reset)
+	begin
+	   if in_active_area = '1' and reset = '1' then
+	     change_ligne_next <= change_ligne_curr XOR '1';
+	   end if;
+	end process;
+	
+	process_recopie_registre : process(in_active_area, out_memoire_ligne1, out_memoire_ligne2, change_ligne_curr, R5_curr, R4_curr, R6_curr, out_gradient)
+	begin
+	  if in_active_area = '1' then
+	    if change_ligne_curr = '0' then
+	      R4_next <= out_memoire_ligne1;
+	      R5_next <= out_memoire_ligne2;
+	    else
+	      R5_next <= out_memoire_ligne1;
+	      R4_next <= out_memoire_ligne2;
+	      
+	    end if;
+	    
+	    R1_next <= R4_curr;
+	    R2_next <= R5_curr;
+	    
+	    R6_next <= out_gradient;
+	    R3_next <= R6_curr;
+	 end if;
+	    
+	end process;
+	
+
+	
+	process_tresh : process(in_active_area, out_memoire_ligne1, out_memoire_ligne2, change_ligne_curr, R1_curr, R2_curr, R3_curr, R4_curr, R5_curr, R6_curr, out_gradient)
+	begin
+	  
+	  Gh <= R5_curr(15 downto 8);
+	  Gv <= R5_curr(7 downto 0);
+
+	  if in_active_area = '1' then
+	    
+	    -- Calcul module
+	    module_curr <= std_logic_vector( unsigned(Gv) * unsigned(Gv) + unsigned(Gh) * unsigned(Gh) );
+	    
+	    -- Calcul angle
+	    
+	    -- Angle 0
+      if (signed(Gv) < signed(Gh)/2 AND signed(Gv) > -signed(Gh)/2) then	      
+        if change_ligne_curr = '0' then
+	        module_dir_plus <= std_logic_vector( unsigned(out_memoire_ligne2(7 downto 0)) * unsigned(out_memoire_ligne2(7 downto 0)) + unsigned(out_memoire_ligne2(15 downto 8)) * unsigned(out_memoire_ligne2(15 downto 8)));
+	      else
+	        module_dir_plus <= std_logic_vector( unsigned(out_memoire_ligne1(7 downto 0)) * unsigned(out_memoire_ligne1(7 downto 0)) + unsigned(out_memoire_ligne1(15 downto 8)) * unsigned(out_memoire_ligne1(15 downto 8)));
+        end if;
+        
+        module_dir_moins <= std_logic_vector(unsigned(R2_curr(7 downto 0)) * unsigned(R2_curr(7 downto 0)) + unsigned(R2_curr(15 downto 8)) * unsigned(R2_curr(15 downto 8)));
+	    
+	      if module_curr => module_dir_moins and module_curr => module_dir_plus then
+	        out_filtre <= module_curr(7 downto 0);
+	        
+	      else
+	        out_filtre <= "00000000";
+	      end if;
+      	    
+ 	    -- Angle Pi/4
+	    else if signed(Gh)/2 < signed(Gv) then
+	      if change_ligne_curr = '0' then
+	        module_dir_plus <= std_logic_vector( unsigned(out_memoire_ligne1(7 downto 0)) * unsigned(out_memoire_ligne1(7 downto 0)) + unsigned(out_memoire_ligne1(15 downto 8)) * unsigned(out_memoire_ligne1(15 downto 8)));
+	      else
+	        module_dir_plus <= std_logic_vector( unsigned(out_memoire_ligne2(7 downto 0)) * unsigned(out_memoire_ligne2(7 downto 0)) + unsigned(out_memoire_ligne2(15 downto 8)) * unsigned(out_memoire_ligne2(15 downto 8)));
+        end if;
+        
+        module_dir_moins <= std_logic_vector(unsigned(R3_curr(7 downto 0)) * unsigned(R3_curr(7 downto 0)) + unsigned(R3_curr(15 downto 8)) * unsigned(R3_curr(15 downto 8)));
+	    
+	    
+	      if module_curr => module_dir_moins and module_curr => module_dir_plus then
+	        out_filtre <= module_curr(7 downto 0);
+	        
+	      else
+	        out_filtre <= "00000000";
+	      end if;
+	      
+	    -- Angle -Pi/4
+	    else if  signed(Gh)/2  < signed(Gv) AND signed(Gv) < -2*signed(Gh) then
+	      module_dir_plus <= std_logic_vector( unsigned(out_gradient(7 downto 0)) * unsigned(out_gradient(7 downto 0)) + unsigned(out_gradient(15 downto 8)) * unsigned(out_gradient(15 downto 8)));
+        module_dir_moins <= std_logic_vector(unsigned(R1_curr(7 downto 0)) * unsigned(R1_curr(7 downto 0)) + unsigned(R1_curr(15 downto 8)) * unsigned(R1_curr(15 downto 8)));
+
+	      if module_curr => module_dir_moins and module_curr => module_dir_plus then
+	        out_filtre <= module_curr(7 downto 0);
+	        
+	      else
+	        out_filtre <= "00000000";
+	      end if;
+	      
+	    -- Angle -Pi/ 2
+	    else
+	      module_dir_plus <= std_logic_vector( unsigned(R6_curr(7 downto 0)) * unsigned(R6_curr(7 downto 0)) + unsigned(R6_curr(15 downto 8)) * unsigned(R6_curr(15 downto 8)));
+        module_dir_moins <= std_logic_vector(unsigned(R4_curr(7 downto 0)) * unsigned(R4_curr(7 downto 0)) + unsigned(R4_curr(15 downto 8)) * unsigned(R4_curr(15 downto 8)));
+
+	      if module_curr => module_dir_moins and module_curr => module_dir_plus then
+	        out_filtre <= module_curr(7 downto 0);
+	        
+	      else
+	        out_filtre <= "00000000";
+	    end if;
+	    end if;
+	    end if;
+	    end if;
+	    
+	  else
+	    out_filtre <= "00000000";
+    end if;
+	      
+  end process;
 	
 	--process
 	process_affichage : process( switch, iY, pixel_in, out_memoire_ligne, out_gradient)
@@ -196,8 +395,8 @@ process_seq:process(clk)	-- clk à 27 MHz <=> 1 périodes en 1 pixel
 		case( switch(4 downto 0) ) is
 			when "00000" => oY <= iY; -- avant fenetrage		
 			when "00001" => oY <= pixel_in; -- après fenetrage				
-			when "00011" => oY <= out_memoire_ligne; -- après memoire
-			when others  => oY <= out_vrai_gradient_curr(7 downto 0);  -- après diff
+			when "00011" => oY <= out_gradient(7 downto 0); -- après grad
+			when others  => oY <= out_filtre; -- après diff
 		end case ;
 			
 	end process ; -- process_affichage

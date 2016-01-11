@@ -11,7 +11,7 @@ end entity bench;
 
 architecture A of bench is
 	
-	constant size : integer := 2;			
+	constant size : integer := 3;			
 	
 	component filtre_video 
 		generic (
